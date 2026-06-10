@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+}
+
+#navbar .logo {
+    color: white;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+#navbar ul li {
+    margin-left: 25px;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 6px 0;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover underline effect */
+#navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+#navbar ul li a:hover::after {
+    width: 100%;
+}
+
+/* Navbar after scrolling */
+#navbar.scrolled {
+    background-color: #ff5e62 !important;
+    padding: 15px 8%;
+    box-shadow: 0 4px 20px rgba(255, 94, 98, 0.3);
+}
+
+#navbar.scrolled .logo,
+#navbar.scrolled ul li a {
+    color: #ffffff !important;
+}
+
+#navbar.scrolled ul li a:hover {
+    color: #1e293b !important;
+}
+
+#navbar.scrolled ul li a::after {
+    background-color: #1e293b !important;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Curved transition */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #f8fafc;
+    clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+/* About Project Section */
+.content {
+    min-height: 100vh;
+    padding: 120px 8% 60px 8%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h2 {
+    font-size: 2.4rem;
+    color: #0f172a;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #4facfe;
+    border-radius: 2px;
+}
+
+.content p {
+    margin-top: 20px;
+    color: #64748b;
+    font-size: 1.05rem;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 850px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+
+    #navbar {
+        padding: 20px 5%;
+    }
+
+    #navbar.scrolled {
+        padding: 15px 5%;
+    }
+
+    #navbar ul li {
+        margin-left: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .content h2 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+}
